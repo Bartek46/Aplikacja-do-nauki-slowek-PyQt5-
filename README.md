@@ -1,5 +1,3 @@
-*README nie zostało jeszcze skończone, jest to zarys konieczny do porpawy.*
-
 # Tech Stack:
 ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ![image](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)\
@@ -13,45 +11,52 @@
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-%23ffffff.svg?style=for-the-badge&logo=python&logoColor=3776AB)
 
 # Aplikacja do nauki słówek z języka angielskiego
-Celem aplikacji jest nauka słówek wykorzystując mechanizmy gratyfikacji.
-Aplikacja jest skierowana do osób chcących nauczyć się lub utrwalić podstawowe słownictwo.
+Aplikacja umożliwia naukę słówek języka angielskiego, wykorzystując mechanizmy gratyfikacji.\
+Głównym celem aplikacji jest efektywne przyswajanie słówek, a nie ich kojarzenie.\
+Skierowana jest do osób, które chcą nauczyć się lub utrwalić podstawowe słownictwo.
+
 
 ## Status projektu
 Aplikacja jest we wstępnej fazie rozwoju.\
-W obecnym momencie identyfikowane są błędy, planowane usprawnienia aplikacji oraz weryfikacja każdej funkcjonalności.
+Obecnie identyfikowane są błędy, planowane usprawnienia oraz przeprowadzana jest weryfikacja poszczególnych funkcji.
 
 ## Demo
-Wkrótce link do yt.
+Widok karty "Gra 2" — ćwiczenie słuchu.
+![image](https://github.com/user-attachments/assets/98973e33-e76c-425d-b43b-9823201486ac)
 
 ## Technologie
-Interfejs został napisany w `PyQt5`.\
-Dane (słówka) przechowywane są w `.json`.\
-Za pomocą api `ElevenLabs` tworzone są pliki audio z wymawianymi słówkami po angielsku.\
-`pygame` służy do odczytywania plików audio.
+- **Interfejs:** `PyQt5`
+- **Baza danych:** `JSON` (przechowywanie słówek i ich metadanych)
+- **Audio:** `ElevenLabs` (generowanie plików dźwiękowych dla wymowy słówek w języku angielskim)
+- **Odtwarzanie audio:** `pygame`
 
 ## Funckjonalności
-Możliwe jest już uczenie sie słówek z języka angielskiego w podziale na poziomy A1-B2.\
-Każdy poziom został podzielony na pliki po 100 słówek, razem prawie 6k słów.\
-Każde słowo będzie przyporządkowane do jednej z trzech grup:
-- `znam` - słowa, które znamy wystarczjąco dobrze i nie musimy się go uczyć
+Aplikacja umożliwia naukę słówek na poziomach A1-B2, podzielonych na pliki po 100 słów.\
+Łącznie baza zawiera prawie 6000 słówek. Każde słowo może być przypisane do jednej z trzech kategorii:
+- `znam` - słowa, które użytkownik zna i nie musi się ich uczyć
 - `uczę się` - słowa, których chcemy się uczyć, otrzymują one zestaw parametrów
-- `nauczone` - podczas nauki, gdy parametry danego słowa sukcesywnie się zmniejszają do określonego zakresu możemy ręcznie oznaczyć słowo jako nauczone lub aplikacja sama uzna dane słowo za nauczone.
+- `nauczone` - podczas nauki, gdy parametry danego słowa sukcesywnie się zmniejszają do określonego zakresu możemy ręcznie oznaczyć słowo jako nauczone lub aplikacja sama uzna dane słowo za nauczone
 
-Aplikacja składa się z kart/okien:
-- Statystyki - zbiór statystyk takich jak:
+Aplikacja zawiera następujące moduły:
+- `Statystyki` - wyświetla statystyki, takie jak:
   - liczba osiągniętych dziennych celów
   - wykres liczby przerobionych słów w podziale na dni
-  - przedstawienie każdego poziomu w podziale na znajomość słówek
-  - szczegółowe przedstawienie staystyk każdego pliku
-- Pierwszy raz - przechodzi się po każdym słowie z pliku i decyduje się czy słowo oznaczone będzie jako `znam` lub `uczę się`
-- Nauka - przechodzi się po każdym słowie z pliku oznaczonym jako `uczę się` i przepisuje się słowo po angielsku, celem zapoznania się ze słowem, dodatkowo każde słowo jest wymawiane
-- Gra 1 - tłumaczenie, po wybraniu pliku do nauki, losowo jest wyświetlane słowo po polsku - celem jest wpisanie tłumaczenia do rubryki, dodatkowo po poprawnym wpisaniu słowo jest wymawiane
-- Gra 2 - ćwiczenie słuchu, po wybraniu pliku do nauki, losowo wybierane jest słowo dla któego uruchiamiany jest plik audio - celem jest rozpoznanie słowa po angielsku i wpisanie go do rubryki
+  - poziom znajomości słówek dla każdego poziomu zaawansowania
+  - szczegółowe staystyki każdego pliku
+- `Pierwszy raz` - przegląd słówek z wybranego pliku; użytkownik decyduje, czy słowo zostanie oznaczone jako `znam` lub `uczę się`
+- `Nauka` - przegląd słówek oznaczonych jako  `uczę się`; użytkownik przepisuje słowo po angielsku, zapoznając się z jego pisownią i wymową, którą można odsłuchać
+- `Gra 1` - ćwiczenie tłumaczenia; losowe słowa z wybrenego pliku wyświetlają się po polsku, a użytkownik wpisuje ich tłumaczenie po angielsku. Po poprawnym wpisaniu słowo jest również wymawiane
+- `Gra 2` - ćwiczenie słuchu; losowe słowa z wybrenego pliku odtwarzane są po angielsku, a użytkownik wpisuje jego odpowiednik w rubryce
 
 ## Planowane funkcjonalności
-- dodanie własnych plików ze słówkami
-- Gra 3 -
-- Gra 4 - 
-- Gra 5 -
-- przeniesienie funkcji tworzenia plików audio, na ten moment tworzone są w odrębnym notebook'u, docelowo będą one tworzone na etapie przyporządkowania słów, gdy trafi do grupy `uczę się` zostanie stworzony plik audio.
-- stworzenie kilku plików audio dla każdego słowa
+- opracowanie systemu punktacji
+- możliwość dodania własnych plików ze słówkami
+- `Gra 3` - zjeżdżające kafelki z kilkoma trybami do wybory:
+  - kafelki po polsku a słowo jest czytane po angielsku
+  - kafelki po polsku a słowo jest wyświetlane po angielsku
+  - kafelki po angielsku a słowo jest wyświetlane po polsku
+- `Gra 4` - łączenie par np. z 12 kafelków
+- `Gra 5` - generowanie zdań w języku angielskim przez LLM (np. Mistral) względem wybranej tematyki lub słownictwa, jedno ze słów jest usuwane a my musimy je uzupełnić
+- znalezienie słów podobnych, zarówno w pisowni (odległość Levenshteina) jak i fonetycznie (są dostępne biblioteki do tego), słowa podobne będą ze sobą zestawiane np. w grze 3
+- przeniesienie funkcji tworzenia plików audio, na ten moment tworzone są ręcznie w odrębnym notebook'u, docelowo będą one tworzone na etapie przyporządkowania słów, gdy trafi do grupy `uczę się` zostanie stworzony plik audio
+- stworzenie kilku plików audio dla każdego słowa, żeby nie przyzwyczajać się do konkretnej wymowy 
