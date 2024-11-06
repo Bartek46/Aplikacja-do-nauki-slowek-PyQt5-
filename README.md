@@ -30,7 +30,7 @@ Widok karty "Gra 2" — ćwiczenie słuchu.
 - **Audio:** `ElevenLabs` (generowanie plików dźwiękowych dla wymowy słówek w języku angielskim)
 - **Odtwarzanie audio:** `pygame`
 
-## Funckjonalności
+## Funkcjonalności
 Aplikacja umożliwia naukę słówek na poziomach A1-B2, podzielonych na pliki po 100 słów.\
 Łącznie baza zawiera prawie 6000 słówek. Każde słowo może być przypisane do jednej z trzech kategorii:
 - `znam` - słowa, które użytkownik zna i nie musi się ich uczyć
@@ -42,11 +42,11 @@ Aplikacja zawiera następujące moduły:
   - liczba osiągniętych dziennych celów
   - wykres liczby przerobionych słów w podziale na dni
   - poziom znajomości słówek dla każdego poziomu zaawansowania
-  - szczegółowe staystyki każdego pliku
+  - szczegółowe statystyki każdego pliku
 - `Pierwszy raz` - przegląd słówek z wybranego pliku; użytkownik decyduje, czy słowo zostanie oznaczone jako `znam` lub `uczę się`
-- `Nauka` - przegląd słówek oznaczonych jako  `uczę się`; użytkownik przepisuje słowo po angielsku, zapoznając się z jego pisownią i wymową, którą można odsłuchać
-- `Gra 1` - ćwiczenie tłumaczenia; losowe słowa z wybrenego pliku wyświetlają się po polsku, a użytkownik wpisuje ich tłumaczenie po angielsku. Po poprawnym wpisaniu słowo jest również wymawiane
-- `Gra 2` - ćwiczenie słuchu; losowe słowa z wybrenego pliku odtwarzane są po angielsku, a użytkownik wpisuje jego odpowiednik w rubryce
+- `Nauka` - przegląd słówek oznaczonych jako `uczę się`; użytkownik przepisuje słowo po angielsku, zapoznając się z jego pisownią i wymową, którą można odsłuchać
+- `Gra 1` - ćwiczenie tłumaczenia; losowe słowa z wybranego pliku wyświetlają się po polsku, a użytkownik wpisuje ich tłumaczenie po angielsku. Po poprawnym wpisaniu słowo jest również wymawiane
+- `Gra 2` - ćwiczenie słuchu; losowe słowa z wybranego pliku odtwarzane są po angielsku, a użytkownik wpisuje jego odpowiednik w rubryce
 
 ## Planowane funkcjonalności
 - opracowanie systemu punktacji
